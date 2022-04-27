@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# First download ca-certificates
-apt-get --allow-unauthenticated update
-apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget
-
 # PPAs
 ## Ubuntu
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.list.d/Ubuntu.list
@@ -30,6 +26,12 @@ echo "deb http://archive.ubuntu.com/ubuntu/ kinetic main" | tee -a /etc/apt/sour
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+
+# First download ca-certificates
+apt-get --allow-unauthenticated update
+apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget
+
+
 ## Intel oneAPI
 #wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
 #echo "deb [signed-by=/usr/share/keyrings/oneAPI.gpg] https://apt.repos.intel.com/oneapi all main" | tee -a /etc/apt/sources.list.d/oneAPI.list
