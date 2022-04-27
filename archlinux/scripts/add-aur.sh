@@ -58,21 +58,18 @@ mkdir -p "${FPP}"
 install -o "${AUR_USER}" -d "${FOREIGN_PKG}"
 
 # get helper pkgbuild
-mkdir -p ~/aura-bin
-sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://raw.githubusercontent.com/flagarde/ci_bak/main/archlinux/scripts/PKGBUILD >> ~/aura-bin/PKGBUILD"
+sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://raw.githubusercontent.com/flagarde/ci_bak/main/archlinux/scripts/PKGBUILD >> ~PKGBUILD"
 
 # make helper
-sudo -u "${AUR_USER}" -D~/aura-bin bash -c "makepkg -s --noprogressbar --noconfirm --needed"
+sudo -u "${AUR_USER}" -D~ bash -c "makepkg -s --noprogressbar --noconfirm --needed"
 
 # install helper
 pacman --upgrade --needed --noconfirm --noprogressbar "${NEW_PKGDEST}"/*.pkg.*
 
 # cleanup
 sudo rm -rf "${NEW_PKGDEST}"/*
-rm -rf "${AUR_USER_HOME}/aura-bin"
 rm -rf "${AUR_USER_HOME}/.cache/go-build"
 rm -rf "${AUR_USER_HOME}/.cargo"
-
 
 # chuck deps
 pacman -Rncs --noconfirm $(pacman -Qtdq) || echo "Nothing to remove"
