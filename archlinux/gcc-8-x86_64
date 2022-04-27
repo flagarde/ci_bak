@@ -9,5 +9,5 @@ ENV CXX=g++
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
 USER build
-RUN sudo pacman --noconfirm -S git; trizen --noconfirm -A gcc8
+RUN trizen --noconfirm -A gcc8
 
