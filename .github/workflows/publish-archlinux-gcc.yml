@@ -1,4 +1,4 @@
-name: Archlinux GCC images
+name: Archlinux GCC
 
 on:
   push:
