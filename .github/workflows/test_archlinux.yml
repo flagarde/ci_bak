@@ -17,9 +17,6 @@ jobs:
 
     steps:
       
-      - name: Install github
-        run: sudo pacman -S --noconfirm git
-      
       - name: Checkout
         uses: actions/checkout@v3
         
