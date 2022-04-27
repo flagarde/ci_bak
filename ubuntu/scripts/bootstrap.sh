@@ -3,15 +3,14 @@
 # First download ca-certificates
 apt-get update
 apt-get dist-upgrade -y
-apt-get install ca-certificates
 
 # Add keys
 
 # PPAs
 ## gcc-3.3 --> gcc-4.5
-echo "deb [trusted=yes] https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list
-echo "deb-src [trusted=yes] https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list 
-apt-get update
+echo "deb https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list
+echo "deb-src https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list 
+apt-get --allow-unauthenticated update
 
 # Add archives
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.list.d/Ubuntu.list
