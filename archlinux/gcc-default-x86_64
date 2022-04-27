@@ -8,5 +8,6 @@ ENV CC=gcc
 ENV CXX=g++
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
+USER build
 RUN pacman -S --needed --noconfirm gcc make
 
