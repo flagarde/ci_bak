@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # First download ca-certificates
+apt-get --allow-unauthenticated update
 apt-get install -y --no-install-recommends ca-certificates
 
 # Add keys
