@@ -1,3 +1,0 @@
-/home/user/CLionProjects/ci/tests/build/CMakeFiles/main.dir
-/home/user/CLionProjects/ci/tests/build/CMakeFiles/edit_cache.dir
-/home/user/CLionProjects/ci/tests/build/CMakeFiles/rebuild_cache.dir
