@@ -2,7 +2,7 @@
 
 # First download ca-certificates
 apt-get --allow-unauthenticated update
-apt-get install -y --no-install-recommends --allow-unauthenticated ca-certificates gpg dirmngr
+apt-get install -y --no-install-recommends --allow-unauthenticated ca-certificates gpg dirmngr gpg-agent
 
 # Add keys
 
