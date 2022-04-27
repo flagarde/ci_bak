@@ -31,7 +31,7 @@ mkdir -p /etc/sudoers.d
 
 # give the aur user passwordless sudo powers for pacman
 echo "${AUR_USER} ALL=(ALL) NOPASSWD: /usr/bin/pacman" > "/etc/sudoers.d/allow_${AUR_USER}_to_pacman"
-echo "${AUR_USER} ALL=(ALL) NOPASSWD: /usr/bin/aura" > "/etc/sudoers.d/allow_${AUR_USER}_to_pacman"
+echo "${AUR_USER} ALL=(ALL) NOPASSWD: /usr/bin/aura" > "/etc/sudoers.d/allow_${AUR_USER}_to_aura"
 
 # let root cd with sudo
 echo "root ALL=(ALL) CWD=* ALL" > /etc/sudoers.d/permissive_root_Chdir_Spec
