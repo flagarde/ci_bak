@@ -62,7 +62,7 @@ install -o "${AUR_USER}" -d "${FOREIGN_PKG}"
 #sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz | bsdtar -xvf -"
 
 # make helper
-sudo -u "${AUR_USER}" -D//root -c "makepkg -s --noprogressbar --noconfirm --needed"
+sudo -u "${AUR_USER}" -D/root/ -c "makepkg -s --noprogressbar --noconfirm --needed"
 
 # install helper
 pacman --upgrade --needed --noconfirm --noprogressbar "${NEW_PKGDEST}"/*.pkg.*
