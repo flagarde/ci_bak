@@ -1,39 +1,40 @@
-# Maintainer: Colin Woodbury <colin@fosskers.ca>
-pkgname=aura-bin
-pkgver=3.2.8
+# Maintainer: Trizen <echo dHJpemVuQHByb3Rvbm1haWwuY29tCg== | base64 -d>
+
+pkgname=trizen
+pkgver=1.66
 pkgrel=1
-pkgdesc="A secure package manager for Arch Linux and the AUR - Prebuilt binary"
-url="https://github.com/fosskers/aura"
+epoch=1
+pkgdesc="Trizen AUR Package Manager: lightweight pacman wrapper and AUR helper."
+arch=('any')
+url="https://github.com/trizen/${pkgname}"
 license=('GPL3')
-arch=('x86_64')
-depends=('gmp' 'pacman')
-optdepends=('bash-completion: for bash completions')
-provides=('aura')
-conflicts=('aura' 'aura-git')
-options=('strip')
-backup=("etc/aura.conf")
-source=("aura-$pkgver-x86_64.tar.gz::$url/releases/download/v$pkgver/aura-$pkgver-x86_64.tar.gz")
-sha256sums=('f77eb9d20338c3f15b8df9fc02fe47222b370fe20169e229855452ffd032f68b')
+
+depends=(
+         'pacutils'
+         'perl>=5.20.0'
+         'perl-libwww'
+         'perl-term-ui'
+         'pacman'
+         'perl-json'
+         'perl-data-dump'
+         'perl-lwp-protocol-https'
+         'perl-term-readline-gnu'
+        )
+
+optdepends=(
+            'highlight: for syntax highlighting'
+            'perl-json-xs: faster JSON deserialization'
+            #'perl-term-readline-gnu: better STDIN support'
+           )
+
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/trizen/${pkgname}/archive/${pkgver}.tar.gz")
+b2sums=('3c34e29395eddf413f100fdd2bab34b1de31afeeb28676c85e7870ced10c6b569f5a6469388ba84fceb0204059fcac4f68415b849374b8ead92cccc87ea27f48')
 
 package() {
-    # Install aura binary
-    install -Dm755 aura -t "$pkgdir/usr/bin/"
-
-    # Installing conf file
-    install -Dm644 aura.conf -t "$pkgdir/etc"
-
-    # Installing man pages
-    install -Dm644 aura.8 -t "$pkgdir/usr/share/man/man8"
-    install -Dm644 aura.conf.5 -t "$pkgdir/usr/share/man/man5"
-
-    # Installing bash completions
-    install -Dm644 bashcompletion.sh \
-      "$pkgdir/usr/share/bash-completion/completions/aura"
-
-    # Installing zsh completions
-    install -Dm644 _aura -t \
-      "$pkgdir/usr/share/zsh/site-functions"
-
-    # Directories for storing PKGBUILDs, source packages & installed package states
-    install -d "$pkgdir/var/cache/aura/"{pkgbuilds,src,states}
+  cd "$pkgname-$pkgver"
+  install -m 755 -D $pkgname "$pkgdir/usr/bin/$pkgname"
+  install -m 644 -D "trizen.1" "$pkgdir/usr/share/man/man1/trizen.1"
+  install -m 644 -D "zsh.completion" "$pkgdir/usr/share/zsh/site-functions/_trizen"
+  install -m 644 -D "bash.completion" "$pkgdir/usr/share/bash-completion/completions/trizen"
+  install -m 644 -D "fish.completion" "$pkgdir/usr/share/fish/vendor_completions.d/trizen.fish"
 }

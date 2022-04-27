@@ -31,7 +31,7 @@ mkdir -p /etc/sudoers.d
 
 # give the aur user passwordless sudo powers for pacman
 echo "${AUR_USER} ALL=(ALL) NOPASSWD: /usr/bin/pacman" > "/etc/sudoers.d/allow_${AUR_USER}_to_pacman"
-echo "${AUR_USER} ALL=(ALL) NOPASSWD: /usr/bin/aura" > "/etc/sudoers.d/allow_${AUR_USER}_to_aura"
+echo "${AUR_USER} ALL=(ALL) NOPASSWD: /usr/bin/trizen" > "/etc/sudoers.d/allow_${AUR_USER}_to_trizen"
 
 # let root cd with sudo
 echo "root ALL=(ALL) CWD=* ALL" > /etc/sudoers.d/permissive_root_Chdir_Spec
@@ -72,7 +72,7 @@ sudo rm -rf "${NEW_PKGDEST}"/*
 rm -rf "${AUR_USER_HOME}/.cache/go-build"
 rm -rf "${AUR_USER_HOME}/.cargo"
 
-aura --help
+trizen --help
 
 # chuck deps
 pacman -Rncs --noconfirm $(pacman -Qtdq) || echo "Nothing to remove"
