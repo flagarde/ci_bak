@@ -4,8 +4,8 @@ FROM archlinux:latest
 # install packages #
 ####################
 
-ENV CC=gcc
-ENV CXX=g++
+ENV CC=gcc8
+ENV CXX=g++8
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
 RUN trizen --noconfirm -A gcc8
