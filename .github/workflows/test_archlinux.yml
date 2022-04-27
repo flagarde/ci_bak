@@ -40,4 +40,5 @@ jobs:
         
       - uses: actions/upload-artifact@v3
         with:
-          path: ./archlinux-gcc-${{ matrix.image }}.txt
+          name: archlinux-${{ matrix.image }}
+          path: ./archlinux-${{ matrix.image }}.txt
