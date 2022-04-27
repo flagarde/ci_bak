@@ -7,19 +7,33 @@ apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certif
 # PPAs
 ## Ubuntu
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ bionic universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ focal main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ focal universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ hirsute main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ hirsute universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ impish main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ impish universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ kinetic main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ kinetic universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ focal main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ focal universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ focal-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ hirsute main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ hirsute universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ hirsute-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ hirsute-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ impish main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ impish universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ impish-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ impish-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ kinetic main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ kinetic universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 ## Intel oneAPI
 #wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
 #echo "deb [signed-by=/usr/share/keyrings/oneAPI.gpg] https://apt.repos.intel.com/oneapi all main" | tee -a /etc/apt/sources.list.d/oneAPI.list
