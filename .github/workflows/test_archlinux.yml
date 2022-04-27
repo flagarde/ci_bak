@@ -26,8 +26,11 @@ jobs:
           cmake-version: 3.23.x
           github-api-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
+        
       - name: '🔧 Configure'
-        run: cmake -S ./tests -B ./build -D CMAKE_BUILD_TYPE=Release
+        run: cmake -G Ninja -S ./tests -B ./build -D CMAKE_BUILD_TYPE=Release
 
       - name: '⚙️ Build'
         run: cmake --build ./build --config Release --parallel 2
