@@ -58,7 +58,7 @@ FPP=$(dirname "${FOREIGN_PKG}")
 mkdir -p "${FPP}"
 install -o "${AUR_USER}" -d "${FOREIGN_PKG}"
 
-echo "# Maintainer: Colin Woodbury <colin@fosskers.ca>\n
+echo '# Maintainer: Colin Woodbury <colin@fosskers.ca>\n
 pkgname=aura-bin\n
 pkgver=3.2.8\n
 pkgrel=1\n
@@ -96,7 +96,7 @@ package() {
 
     # Directories for storing PKGBUILDs, source packages & installed package states
     install -d \"$pkgdir/var/cache/aura/\"{pkgbuilds,src,states}
-}" >> PKGBUILD
+}' >> PKGBUILD
 
 # get helper pkgbuild
 #sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz | bsdtar -xvf -"
