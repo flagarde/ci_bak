@@ -34,3 +34,10 @@ jobs:
 
       - name: '⚙️ Build'
         run: cmake --build ./build --config Release --parallel 2
+        
+      - name: 'List packages'
+        run: sudo pacman -S expac;  cmake --build ./build --config Release --parallel 2 ${{ github.repository }}-archlinux-gcc-${{ matrix.image }}.txt
+        
+      - uses: actions/upload-artifact@v3
+        with:
+          path: ./${{ github.repository }}-archlinux-gcc-${{ matrix.image }}.txt
