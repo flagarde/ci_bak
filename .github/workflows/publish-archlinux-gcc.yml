@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2.10.0
         with:
           context: .
-          push: false
+          push: true
           file: ./archlinux/gcc/gcc-${{ matrix.version }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
