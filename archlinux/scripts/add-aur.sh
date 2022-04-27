@@ -16,6 +16,7 @@ HELPER="${2:-yay}"
 #get-new-mirrors
 
 # we're gonna need sudo to use the helper properly
+pacman -Syu --noconfirm --noprogressbar
 pacman --sync --needed --noconfirm --noprogressbar sudo || echo "Nothing to do"
 
 # create the user
