@@ -6,7 +6,7 @@ FROM archlinux:latest
 
 ENV CC=gcc
 ENV CXX=g++
-ADD ./archlinux/scripts/add-aur.sh /root
+ADD ./archlinux/scripts/* /root
 RUN bash /root/add-aur.sh "build"
 RUN pacman -S --needed --noconfirm gcc make
 
