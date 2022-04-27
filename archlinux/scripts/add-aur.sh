@@ -7,7 +7,6 @@ set -o verbose
 set -o xtrace
 
 AUR_USER="${1:-ab}"
-HELPER="${2:-yay}"
 
 # update mirrorlist
 #curl --silent --location https://raw.githubusercontent.com/greyltc/docker-archlinux/master/get-new-mirrors.sh > /tmp/get-new-mirrors
@@ -62,7 +61,7 @@ install -o "${AUR_USER}" -d "${FOREIGN_PKG}"
 sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://raw.githubusercontent.com/flagarde/ci_bak/main/archlinux/scripts/PKGBUILD"
 
 # make helper
-sudo -u "${AUR_USER}" -D~//${HELPER} bash -c "makepkg -s --noprogressbar --noconfirm --needed"
+sudo -u "${AUR_USER}" -D~// bash -c "makepkg -s --noprogressbar --noconfirm --needed"
 
 # install helper
 pacman --upgrade --needed --noconfirm --noprogressbar "${NEW_PKGDEST}"/*.pkg.*
