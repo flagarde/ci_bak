@@ -5,26 +5,29 @@ apt-get --allow-unauthenticated update
 apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates
 
 # PPAs
-## gcc-3.3 --> gcc-4.5
-#cat ./keys/h-rayflood.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/gcc1.gpg  >/dev/null
-echo "deb [trusted=yes] https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list
-echo "deb-src [trusted=yes] https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list 
+## Ubuntu
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ focal main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ focal universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ hirsute main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ hirsute universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ impish main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ impish universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ kinetic main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ kinetic universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+## Intel oneAPI
+echo "deb https://apt.repos.intel.com/oneapi all main" | tee /etc/apt/sources.list.d/oneAPI.list
+## LLVM
+echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main" | tee /etc/apt/sources.list.d/LLVM.list
+echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" | tee /etc/apt/sources.list.d/LLVM.list
+echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main" | tee /etc/apt/sources.list.d/LLVM.list
+
 apt-get update
-
-# Add archives
-#echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.list.d/Ubuntu.list
-#echo "deb http://archive.ubuntu.com/ubuntu/ bionic universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-#echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee /etc/apt/sources.list.d/Ubuntu.list
-#echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee /etc/apt/sources.list.d/Ubuntu.list
-
-# Intel oneAPI
-#echo "deb https://apt.repos.intel.com/oneapi all main" | tee /etc/apt/sources.list.d/oneAPI.list
-# LLVM
-#echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main" | tee /etc/apt/sources.list.d/LLVM.list
-#echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" | tee /etc/apt/sources.list.d/LLVM.list
-#echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main" | tee /etc/apt/sources.list.d/LLVM.list
-
-#apt-get update
 #apt-get dist-upgrade -y
 #apt-get install --no-install-recommends -y software-properties-common wget ca-certificates apt-utils gpg-agent make binutils
 #add-apt-repository -y ppa:ubuntu-toolchain-r/test
