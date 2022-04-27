@@ -1,6 +1,4 @@
 #!/bin/sh
-pacman -Syu --noconfirm
-pacman -S --needed --noconfirm sudo
 useradd --no-create-home --shell=/bin/false build && usermod -L build
 echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
