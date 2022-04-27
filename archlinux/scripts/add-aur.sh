@@ -71,7 +71,7 @@ sudo rm -rf "${NEW_PKGDEST}"/*
 rm -rf "${AUR_USER_HOME}/.cache/go-build"
 rm -rf "${AUR_USER_HOME}/.cargo"
 
-aura --version
+aura --help
 
 # chuck deps
 pacman -Rncs --noconfirm $(pacman -Qtdq) || echo "Nothing to remove"
