@@ -6,7 +6,7 @@ FROM archlinux:latest
 
 ENV CC=gcc
 ENV CXX=g++
-RUN pacman -Syu --noconfirm ; pacman -S --needed --noconfirm sudo
+RUN pacman-key --init; pacman -Syu --noconfirm ; pacman -S --needed --noconfirm sudo
 COPY ./archlinux/* ./archlinux
 RUN chmod +x ./archlinux/bootstrap.sh; ./archlinux/bootstrap.sh;
 
