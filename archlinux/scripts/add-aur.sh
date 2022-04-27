@@ -58,6 +58,7 @@ mkdir -p "${FPP}"
 install -o "${AUR_USER}" -d "${FOREIGN_PKG}"
 
 # get helper pkgbuild
+mkdir -p ~/aura-bin
 sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://raw.githubusercontent.com/flagarde/ci_bak/main/archlinux/scripts/PKGBUILD >> ~/aura-bin/PKGBUILD"
 
 # make helper
