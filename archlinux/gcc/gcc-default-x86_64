@@ -7,5 +7,5 @@ FROM archlinux:latest
 ENV CC=gcc
 ENV CXX=g++
 COPY ./archlinux ./archlinux
-RUN chmod +x bootstrap.sh; ./bootstrap.sh;
+RUN chmod +x ./archlinux/bootstrap.sh; ./archlinux/bootstrap.sh;
 
