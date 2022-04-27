@@ -26,6 +26,12 @@ echo "deb http://archive.ubuntu.com/ubuntu/ kinetic main" | tee -a /etc/apt/sour
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+
+# Install required packages
+apt-get --allow-unauthenticated update
+apt-get --allow-unauthenticated dist-upgrade
+apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget apt-utils
+
 ##
 echo "deb https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu jammy main"  | tee /etc/apt/sources.list.d/Toolchain.list
 echo "deb-src https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu jammy main"  | tee /etc/apt/sources.list.d/Toolchain.list
@@ -39,10 +45,6 @@ echo "deb [signed-by=/usr/share/keyrings/LLVM.gpg] http://apt.llvm.org/jammy/ ll
 echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ jammy main' | tee /etc/apt/sources.list.d/kitware.list
 echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ jammy-rc main' | tee -a /etc/apt/sources.list.d/kitware.list
 
-# First download ca-certificates
-apt-get --allow-unauthenticated update
-apt-get --allow-unauthenticated dist-upgrade
-apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget apt-utils
 
 ## Intel oneAPI
 #wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
