@@ -6,5 +6,5 @@ FROM archlinux:latest
 
 ENV CC=gcc
 ENV CXX=g++
-RUN pacman-key --init; pacman -Syu --noconfirm ; pacman -S --needed --noconfirm gcc
+RUN pacman-key --init; pacman -Syu --noconfirm ; pacman -S --needed --noconfirm gcc make
 
