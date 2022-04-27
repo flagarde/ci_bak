@@ -8,4 +8,4 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV CC=gcc
 ENV CXX=g++
 COPY ./ubuntu/scripts/bootstrap.sh .
-RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends gcc-3.3
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends g++
