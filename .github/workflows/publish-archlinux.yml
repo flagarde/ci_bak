@@ -1,4 +1,4 @@
-name: Archlinux GCC
+name: Archlinux
 
 on:
   push:
@@ -21,6 +21,7 @@ jobs:
       matrix:
         version:
           - gcc-default-x86_64
+          - gcc-8-x86_64
           - clang-default-x86_64
 
     steps:
