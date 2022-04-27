@@ -8,6 +8,7 @@ apt-get install -y --no-install-recommends --allow-unauthenticated ca-certificat
 
 # PPAs
 ## gcc-3.3 --> gcc-4.5
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 9DB3C0CF23957A28
 echo "deb https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list
 echo "deb-src https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list 
 apt-get --allow-unauthenticated update
