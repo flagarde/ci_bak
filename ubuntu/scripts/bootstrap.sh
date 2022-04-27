@@ -34,11 +34,11 @@ apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certif
 
 # Keys
 ## Toolchains
-wget -O - "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x60C317803A41BA51845E371A1E9377A2BA9EF27F" | gpg --dearmor - | tee /usr/share/keyrings/Toolchain.gpg
+wget -O - "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x60C317803A41BA51845E371A1E9377A2BA9EF27F" | gpg --dearmor - | tee /usr/share/keyrings/Toolchain.gpg > /dev/null
 ## Intel oneAPI
-wget -O - "https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB" | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
+wget -O - "https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB" | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg > /dev/null
 ## LLVM
-wget -O - "https://apt.llvm.org/llvm-snapshot.gpg.key" | gpg --dearmor - | tee /usr/share/keyrings/LLVM.gpg
+wget -O - "https://apt.llvm.org/llvm-snapshot.gpg.key" | gpg --dearmor - | tee /usr/share/keyrings/LLVM.gpg > /dev/null
 ## CMake
 wget -O - "https://apt.kitware.com/keys/kitware-archive-latest.asc" | gpg --dearmor - | tee /usr/share/keyrings/CMake.gpg >/dev/null
 
