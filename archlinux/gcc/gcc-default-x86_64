@@ -6,10 +6,7 @@ FROM archlinux:latest
 
 ENV CC=gcc
 ENV CXX=g++
-RUN useradd --no-create-home --shell=/bin/false build && usermod -L build
-RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-RUN echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-COPY ./archlinux/* ./archlinux
 USER build
-RUN ./archlinux/bootstrap.sh;
+COPY ./archlinux/* ./archlinux
+RUN chmod +x ./archlinux/bootstrap.sh; ./archlinux/bootstrap.sh;
 
