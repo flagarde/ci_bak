@@ -8,5 +8,5 @@ ENV CC=gcc
 ENV CXX=g++
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
-RUN aura --noconfirm -A gcc8 
+RUN sudo aura --noconfirm -A gcc8 
 
