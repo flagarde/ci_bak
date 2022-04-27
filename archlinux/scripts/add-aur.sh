@@ -17,6 +17,7 @@ HELPER="${2:-yay}"
 
 # we're gonna need sudo to use the helper properly
 pacman-key --init; 
+pacman -Sy
 pacman --sync --needed --noconfirm --noprogressbar sudo fakeroot binutils || echo "Nothing to do"
 
 # create the user
