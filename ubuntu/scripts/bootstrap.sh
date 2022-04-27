@@ -2,10 +2,23 @@
 
 # First download ca-certificates
 apt-get --allow-unauthenticated update
-apt-get install -y --no-install-recommends --allow-unauthenticated ca-certificates gpg dirmngr gpg-agent
+apt-get install -y --no-install-recommends --allow-unauthenticated gpg
 
 # Add keys
-
+cat "-----BEGIN PGP PUBLIC KEY BLOCK-----\n
+Comment: Hostname: \n
+Version: Hockeypuck ~unreleased\n
+\n
+xo0EUOrZnQEEALHmfDdzQ3LbKBIlYTjYxd6Yld6VWUDIWok4Gn3e8PAUZAbOsaNW\n
+SIZL6Os2NQLtfQD0umkaJyyRIeOOH6nA/YvjJMGc0tJ9PFGa9mqON1ZmuWl0FUtQ\n
+7W58xZKkfhQGXGpCBmzWn1ByBtN+Mio9kGdEcDAT3CGpNyQxc1+9BCM/ABEBAAHN\n
+HUxhdW5jaHBhZCBQUEEgZm9yIGhBVHJheWZsb29kwrgEEwECACIFAlDq2Z0CGwMG\n
+CwkIBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEJ2zwM8jlXoo6gYEAJfCnBbuiP0p\n
+qLotbv+ge6wIzTER+GxeHeRbWH5nCRRV+HXty6U3XoqOCUubfYA9+Ahf7Af5bqHM\n
+C88XL18LNiTCGkLFhTyNpvPNTAgoH32b/cWn73kmHAgHa729CyA6IF3oBmLzx+Si\n
+BQTnsjUNGbsIUaCMvlyEiXYAVphjZTZb\n
+=YLao\n
+-----END PGP PUBLIC KEY BLOCK-----\n"| gpg --dearmor | tee /etc/apt/trusted.gpg.d/gcc1.gpg  >/dev/null
 # PPAs
 ## gcc-3.3 --> gcc-4.5
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 9DB3C0CF23957A28
