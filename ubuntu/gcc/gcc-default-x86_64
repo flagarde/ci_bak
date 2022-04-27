@@ -9,4 +9,4 @@ ENV CC=gcc
 ENV CXX=g++
 COPY ./ubuntu/scripts/bootstrap.sh .
 COPY ./ubuntu/keys/* ./keys/
-RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends --allow-unauthenticated gcc-3.3
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends intel-basekit
