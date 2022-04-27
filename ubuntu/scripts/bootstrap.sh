@@ -28,11 +28,11 @@ echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates main" | tee /etc/apt
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 
 # Install required packages
-apt-get --allow-unauthenticated update
-apt-get --allow-unauthenticated dist-upgrade
+apt-get update
+apt-get dist-upgrade
 apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget apt-utils
 
-##
+# PPAs
 echo "deb https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu jammy main"  | tee /etc/apt/sources.list.d/Toolchain.list
 echo "deb-src https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu jammy main"  | tee /etc/apt/sources.list.d/Toolchain.list
 ## Intel oneAPI
@@ -45,20 +45,16 @@ echo "deb [signed-by=/usr/share/keyrings/LLVM.gpg] http://apt.llvm.org/jammy/ ll
 echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ jammy main' | tee /etc/apt/sources.list.d/kitware.list
 echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ jammy-rc main' | tee -a /etc/apt/sources.list.d/kitware.list
 
-
+# Keys
 ## Intel oneAPI
-#wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
-
+wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
 ## LLVM
-#wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor - | tee /usr/share/keyrings/LLVM.gpg
-
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor - | tee /usr/share/keyrings/LLVM.gpg
 ## CMake
-#wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc | gpg --dearmor - | tee /usr/share/keyrings/CMake.gpg >/dev/null
-#echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ focal main' | tee -a /etc/apt/sources.list.d/kitware.list
-#echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ focal-rc main' | tee -a /etc/apt/sources.list.d/kitware.list
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc | gpg --dearmor - | tee /usr/share/keyrings/CMake.gpg >/dev/null
 
-#apt-get update
-#apt-get dist-upgrade -y
+apt-get update
+
 #apt-get install --no-install-recommends -y software-properties-common wget ca-certificates apt-utils gpg-agent make binutils
 #add-apt-repository -y ppa:ubuntu-toolchain-r/test
 #apt-add-repository -y "deb http://archive.ubuntu.com/ubuntu/ bionic main"
