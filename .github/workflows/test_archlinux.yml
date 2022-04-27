@@ -11,11 +11,14 @@ jobs:
     strategy:
       fail-fast: false    
       matrix:
-        image: [default-x86_64]
+        image: [gcc-default-x86_64]
 
-    container: ghcr.io/${{ github.repository }}-archlinux-gcc-${{ matrix.image }}:main
+    container: ghcr.io/${{ github.repository }}-archlinux-${{ matrix.image }}:main
 
     steps:
+      
+      - name: Install github
+        run: sudo pacman -S --noconfirm git
       
       - name: Checkout
         uses: actions/checkout@v3
