@@ -30,10 +30,6 @@ echo "deb http://archive.ubuntu.com/ubuntu/ kinetic main" | tee -a /etc/apt/sour
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 ## Intel oneAPI
 #wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
 #echo "deb [signed-by=/usr/share/keyrings/oneAPI.gpg] https://apt.repos.intel.com/oneapi all main" | tee -a /etc/apt/sources.list.d/oneAPI.list
