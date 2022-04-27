@@ -39,8 +39,8 @@ jobs:
         run: cmake --build ./build --config Release --parallel 2
         
       - name: 'List packages'
-        run: sudo pacman -S --noconfirm expac;  expac -H M '%m\t%n' | sort -h > ${{ github.repository }}-archlinux-gcc-${{ matrix.image }}.txt
+        run: sudo pacman -S --noconfirm expac;  expac -H M '%m\t%n' | sort -h > archlinux-gcc-${{ matrix.image }}.txt
         
       - uses: actions/upload-artifact@v3
         with:
-          path: ./${{ github.repository }}-archlinux-gcc-${{ matrix.image }}.txt
+          path: ./archlinux-gcc-${{ matrix.image }}.txt
