@@ -6,9 +6,9 @@ apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certif
 
 # PPAs
 ## gcc-3.3 --> gcc-4.5
-cat ./keys/h-rayflood.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/gcc1.gpg  >/dev/null
-echo "deb https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list
-echo "deb-src https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list 
+#cat ./keys/h-rayflood.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/gcc1.gpg  >/dev/null
+echo "deb [trusted=yes] https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list
+echo "deb-src [trusted=yes] https://ppa.launchpadcontent.net/h-rayflood/gcc-lower/ubuntu trusty main" | tee /etc/apt/sources.list.d/gcc1.list 
 apt-get update
 
 # Add archives
