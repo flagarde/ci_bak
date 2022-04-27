@@ -29,12 +29,11 @@ echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates universe" | tee -a /
 
 # First download ca-certificates
 apt-get --allow-unauthenticated update
-apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget
-
+apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget apt-utils
 
 ## Intel oneAPI
-#wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
-#echo "deb [signed-by=/usr/share/keyrings/oneAPI.gpg] https://apt.repos.intel.com/oneapi all main" | tee -a /etc/apt/sources.list.d/oneAPI.list
+wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg
+echo "deb [signed-by=/usr/share/keyrings/oneAPI.gpg] https://apt.repos.intel.com/oneapi all main" | tee -a /etc/apt/sources.list.d/oneAPI.list
 ## LLVM
 #wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor - | tee /usr/share/keyrings/LLVM.gpg
 #echo "deb [signed-by=/usr/share/keyrings/LLVM.gpg] http://apt.llvm.org/focal/ llvm-toolchain-focal main" | tee /etc/apt/sources.list.d/LLVM.list
