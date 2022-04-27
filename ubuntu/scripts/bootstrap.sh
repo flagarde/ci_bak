@@ -2,7 +2,7 @@
 
 # First download ca-certificates
 apt-get --allow-unauthenticated update
-apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates
+apt-get install -y --no-install-recommends --allow-unauthenticated gpg ca-certificates wget
 
 # PPAs
 ## Ubuntu
@@ -21,11 +21,17 @@ echo "deb http://archive.ubuntu.com/ubuntu/ trusty universe" | tee /etc/apt/sour
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee /etc/apt/sources.list.d/Ubuntu.list
 ## Intel oneAPI
-echo "deb https://apt.repos.intel.com/oneapi all main" | tee /etc/apt/sources.list.d/oneAPI.list
+wget -O - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/oneAPI.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/oneAPI.gpg] https://apt.repos.intel.com/oneapi all main" | tee -a /etc/apt/sources.list.d/oneAPI.list
 ## LLVM
-echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main" | tee /etc/apt/sources.list.d/LLVM.list
-echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" | tee /etc/apt/sources.list.d/LLVM.list
-echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main" | tee /etc/apt/sources.list.d/LLVM.list
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/LLVM.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/LLVM.gpg] http://apt.llvm.org/focal/ llvm-toolchain-focal main" | tee /etc/apt/sources.list.d/LLVM.list
+echo "deb [signed-by=/usr/share/keyrings/LLVM.gpg] http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" | tee -a /etc/apt/sources.list.d/LLVM.list
+echo "deb [signed-by=/usr/share/keyrings/LLVM.gpg] http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main" | tee -a /etc/apt/sources.list.d/LLVM.list
+## CMake
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/CMake.gpg >/dev/null
+echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ focal main' | tee -a /etc/apt/sources.list.d/kitware.list >/dev/null
+echo 'deb [signed-by=/usr/share/keyrings/CMake.gpg] https://apt.kitware.com/ubuntu/ focal-rc main' | tee -a /etc/apt/sources.list.d/kitware.list >/dev/null
 
 apt-get update
 #apt-get dist-upgrade -y
