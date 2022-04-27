@@ -13,7 +13,7 @@ jobs:
       matrix:
         image: [default-x86_64]
 
-    container: ghcr.io/flagarde/${{ github.repository }}-archlinux-gcc-${{ matrix.version }}:main
+    container: ghcr.io/flagarde/${{ github.repository }}-archlinux-gcc-${{ matrix.image }}:main
 
     steps:
       
