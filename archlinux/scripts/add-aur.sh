@@ -17,7 +17,7 @@ HELPER="${2:-yay}"
 
 # we're gonna need sudo to use the helper properly
 pacman-key --init; 
-pacman --sync --needed --noconfirm --noprogressbar sudo fakeroot strip || echo "Nothing to do"
+pacman --sync --needed --noconfirm --noprogressbar sudo fakeroot binutils || echo "Nothing to do"
 
 # create the user
 AUR_USER_HOME="/var/${AUR_USER}"
