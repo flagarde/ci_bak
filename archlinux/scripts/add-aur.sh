@@ -62,6 +62,7 @@ install -o "${AUR_USER}" -d "${FOREIGN_PKG}"
 #sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz | bsdtar -xvf -"
 
 # make helper
+sudo ls ~
 sudo -u "${AUR_USER}" -D~ bash -c "makepkg -s --noprogressbar --noconfirm --needed"
 
 
