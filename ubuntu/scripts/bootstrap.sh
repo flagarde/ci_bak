@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # First download ca-certificates
-apt-get update
-apt-get dist-upgrade -y
+apt-get install -y --no-install-recommends ca-certificates
 
 # Add keys
 
