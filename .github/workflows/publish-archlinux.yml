@@ -20,7 +20,8 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - default-x86_64
+          - gcc-default-x86_64
+          - clang-default-x86_64
 
     steps:
       - name: Checkout repository
@@ -37,13 +38,13 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3.7.0
         with:
-          images: ${{ env.REGISTRY }}/${{ github.repository }}-archlinux-gcc-${{ matrix.version }}
+          images: ${{ env.REGISTRY }}/${{ github.repository }}-archlinux-${{ matrix.version }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2.10.0
         with:
           context: .
           push: true
-          file: ./archlinux/gcc/gcc-${{ matrix.version }}
+          file: ./archlinux/${{ matrix.version }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
