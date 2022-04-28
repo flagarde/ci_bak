@@ -14,7 +14,6 @@ jobs:
         image:
           - clang-default-x86_64
           - gcc-default-x86_64
-          - gcc-8-x86_64
 
     container: ghcr.io/${{ github.repository }}-archlinux-${{ matrix.image }}:main
 
