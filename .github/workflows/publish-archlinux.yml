@@ -21,9 +21,27 @@ jobs:
       matrix:
         version:
           - gcc-default-x86_64
+          - gcc-10-x86_64
+          - gcc-9-x86_64
           - gcc-8-x86_64
-          - gcc-3.4-x86_64
+          - gcc-7-x86_64
+          - gcc-6-x86_64
+          - gcc-5-x86_64
+          - gcc-4.9-x86_64
+          - gcc-4.8-x86_64
+          - gcc-4.7-x86_64
+          - gcc-4.6-x86_64
+          - gcc-4.5-x86_64
+          - gcc-4.4-x86_64
+          - gcc-4.3-x86_64
           - clang-default-x86_64
+          - clang-12-x86_64
+          - clang-9-x86_64
+          - clang-8-x86_64
+          - clang-7-x86_64
+          - clang-5-x86_64
+          - clang-4-x86_64
+          - clang-3.5-x86_64
 
     steps:
       - name: Checkout repository
@@ -46,7 +64,7 @@ jobs:
         uses: docker/build-push-action@v2.10.0
         with:
           context: .
-          push: true
+          push: false
           file: ./archlinux/${{ matrix.version }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
