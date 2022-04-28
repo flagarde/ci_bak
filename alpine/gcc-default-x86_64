@@ -1,0 +1,5 @@
+FROM alpine:latest
+
+RUN apk add --no-cache g++ cmake make binutils
+ENV CC=gcc
+ENV CXX=g++

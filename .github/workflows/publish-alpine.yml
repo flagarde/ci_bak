@@ -1,0 +1,56 @@
+name: Alpine
+
+on:
+  push:
+    branches: ['main']
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      packages: write
+      
+    strategy:
+      fail-fast: false
+      matrix:
+        version:
+          - gcc-default-x86_64
+          - gcc-10.3-x86_64
+          - gcc-10.2-x86_64
+          - gcc-9.3-x86_64
+          - clang-default-x86_64
+          - clang-12-x86_64
+          - clang-11.1-x86_64
+          - clang-10-x86_64
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v1.14.1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v3.7.0
+        with:
+          images: ${{ env.REGISTRY }}/${{ github.repository }}-alpine-${{ matrix.version }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2.10.0
+        with:
+          context: .
+          push: false
+          file: ./alpine/${{ matrix.version }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
