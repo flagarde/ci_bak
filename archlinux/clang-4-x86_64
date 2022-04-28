@@ -6,7 +6,8 @@ FROM archlinux:latest
 
 ENV CC=clang
 ENV CXX=clang++
-ADD ./archlinux/scripts/add-aur.sh /root
+ADD ./archlinux/scripts/add-aur.sh/root
 RUN bash /root/add-aur.sh "build"
+USER build
 RUN trizen -S --needed --noconfirm git clang40;trizen --noconfirm -Rscn git; trizen --noconfirm -Scc
-
+USER root
