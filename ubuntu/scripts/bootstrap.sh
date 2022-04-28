@@ -28,8 +28,8 @@ wget -O - "https://apt.kitware.com/keys/kitware-archive-latest.asc" | gpg --dear
 
 # PPAs
 ## Toolchains
-echo "deb [signed-by=/usr/share/keyrings/Toolchain.gpg] https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu jammy main"  | tee /etc/apt/sources.list.d/Toolchain.list
-echo "deb-src [signed-by=/usr/share/keyrings/Toolchain.gpg] https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu jammy main"  | tee /etc/apt/sources.list.d/Toolchain.list
+echo "deb [signed-by=/usr/share/keyrings/Toolchain.gpg] https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu focal main"  | tee /etc/apt/sources.list.d/Toolchain.list
+echo "deb-src [signed-by=/usr/share/keyrings/Toolchain.gpg] https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu focal main"  | tee /etc/apt/sources.list.d/Toolchain.list
 ## Intel oneAPI
 echo "deb [signed-by=/usr/share/keyrings/oneAPI.gpg] https://apt.repos.intel.com/oneapi all main" | tee /etc/apt/sources.list.d/oneAPI.list
 ## LLVM
