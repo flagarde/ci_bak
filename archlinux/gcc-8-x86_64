@@ -4,7 +4,7 @@ FROM archlinux:latest
 # install packages #
 ####################
 
-ENV CC=gcc-8
+ENV CC=cc-8
 ENV CXX=g++-8
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
