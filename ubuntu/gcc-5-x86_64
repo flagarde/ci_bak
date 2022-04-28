@@ -1,0 +1,16 @@
+FROM ubuntu:jammy
+
+####################
+# install packages #
+####################
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN mkdir -p /scripts
+COPY ./scripts/bootstrap.sh /scripts
+WORKDIR /scripts
+RUN ls
+RUN chmod +x bootstrap.sh; ./bootstrap.sh
+RUN apt-get install -y --no-install-recommends g++-5
+ENV CC=gcc-5
+ENV CXX=g++-5

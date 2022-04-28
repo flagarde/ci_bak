@@ -1,0 +1,25 @@
+FROM ubuntu:jammy
+
+####################
+# install packages #
+####################
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN mkdir -p /scripts
+COPY ./scripts/bootstrap.sh /scripts
+WORKDIR /scripts
+RUN ls
+RUN chmod +x bootstrap.sh; ./bootstrap.sh
+apt-get install libc6-dev binutils
+##################
+# get latest GCC #
+##################
+
+RUN wget http://kayari.org/gcc-latest/gcc-latest.deb && \
+    dpkg -i gcc-latest.deb && \
+    rm -rf gcc-latest.deb && \
+    ln -s /opt/gcc-latest/bin/g++ /opt/gcc-latest/bin/g++-latest && \
+    ln -s /opt/gcc-latest/bin/gcc /opt/gcc-latest/bin/gcc-latest
+
+ENV PATH=${PATH}:/opt/gcc-latest/bin

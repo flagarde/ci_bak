@@ -1,0 +1,17 @@
+FROM ubuntu:jammy
+
+####################
+# install packages #
+####################
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN mkdir -p /scripts
+COPY ./scripts/bootstrap.sh /scripts
+WORKDIR /scripts
+RUN ls
+RUN chmod +x bootstrap.sh; ./bootstrap.sh
+RUN apt-get install -y --no-install-recommends intel-basekit
+RUN source /opt/intel/oneapi/setvars.sh
+ENV CC: icx
+ENV CXX: icpx
