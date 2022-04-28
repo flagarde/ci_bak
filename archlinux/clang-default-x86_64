@@ -8,5 +8,5 @@ ENV CC=clang
 ENV CXX=clang++
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
-RUN sudo pacman -S --needed --noconfirm clang make
+RUN sudo pacman -S --needed --noconfirm clang
 

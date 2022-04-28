@@ -17,7 +17,7 @@ AUR_USER="${1:-ab}"
 # we're gonna need sudo to use the helper properly
 pacman-key --init; 
 pacman -Sy
-pacman --sync --needed --noconfirm --noprogressbar sudo fakeroot binutils || echo "Nothing to do"
+pacman --sync --needed --noconfirm --noprogressbar sudo fakeroot binutils make || echo "Nothing to do"
 
 # create the user
 AUR_USER_HOME="/var/${AUR_USER}"
