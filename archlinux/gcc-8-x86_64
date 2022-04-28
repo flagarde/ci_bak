@@ -6,5 +6,5 @@ FROM archlinux:latest
 
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
-RUN trizen --noconfirm -A gcc8
+RUN trizen --noconfirm -S gcc8
 

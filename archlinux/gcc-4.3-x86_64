@@ -6,5 +6,5 @@ FROM archlinux:latest
 
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
-RUN trizen --noconfirm -A git gcc43;trizen --noconfirm -Rscn git; trizen --noconfirm -Scc
+RUN trizen --noconfirm -S git gcc43;trizen --noconfirm -Rscn git; trizen --noconfirm -Scc
 
