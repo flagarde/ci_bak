@@ -6,12 +6,8 @@ FROM ubuntu:jammy
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN mkdir -p /scripts
-COPY ./scripts/bootstrap.sh /scripts
-WORKDIR /scripts
-RUN ls
-RUN chmod +x bootstrap.sh; ./bootstrap.sh
-apt-get install libc6-dev binutils
+COPY ./ubuntu/scripts/bootstrap.sh .
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends libc6-dev binutils
 ##################
 # get latest GCC #
 ##################

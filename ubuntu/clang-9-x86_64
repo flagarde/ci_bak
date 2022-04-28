@@ -6,12 +6,8 @@ FROM ubuntu:jammy
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN mkdir -p /scripts
-COPY ./scripts/bootstrap.sh /scripts
-WORKDIR /scripts
-RUN ls
-RUN chmod +x bootstrap.sh; ./bootstrap.sh
-RUN apt-get install -y --no-install-recommends clang-9
+COPY ./ubuntu/scripts/bootstrap.sh .
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends clang-9
 ENV CC=clang-9
 ENV CXX=clang++-9
 
