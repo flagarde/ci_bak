@@ -10,22 +10,6 @@ echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee -a /etc/apt/sourc
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ focal main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ focal universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ focal-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ hirsute main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ hirsute universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ hirsute-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ hirsute-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ impish main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ impish universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ impish-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ impish-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ kinetic main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ kinetic universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ kinetic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 
 # Install required packages
 apt-get update
