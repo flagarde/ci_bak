@@ -1,0 +1,18 @@
+FROM archlinux:latest
+
+####################
+# install packages #
+####################
+
+ADD ./archlinux/scripts/add-aur.sh /root
+RUN bash /root/add-aur.sh "build"
+# get helper pkgbuild
+sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://raw.githubusercontent.com/flagarde/ci_bak/main/archlinux/scripts/gcc-3.4/PKGBUILD >> ~/PKGBUILD"
+
+# make helper
+sudo -u "${AUR_USER}" -D~ bash -c "makepkg -s --noprogressbar --noconfirm --needed"
+
+# install helper
+pacman --upgrade --needed --noconfirm --noprogressbar "${NEW_PKGDEST}"/*.pkg.*
+
+

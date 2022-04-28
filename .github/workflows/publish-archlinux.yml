@@ -22,6 +22,7 @@ jobs:
         version:
           - gcc-default-x86_64
           - gcc-8-x86_64
+          - gcc-3.4-x86_64
           - clang-default-x86_64
 
     steps:

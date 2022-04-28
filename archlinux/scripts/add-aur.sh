@@ -59,7 +59,7 @@ mkdir -p "${FPP}"
 install -o "${AUR_USER}" -d "${FOREIGN_PKG}"
 
 # get helper pkgbuild
-sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://raw.githubusercontent.com/flagarde/ci_bak/main/archlinux/scripts/PKGBUILD >> ~/PKGBUILD"
+sudo -u "${AUR_USER}" -D~ bash -c "curl --silent --location https://raw.githubusercontent.com/flagarde/ci_bak/main/archlinux/scripts/aura/PKGBUILD >> ~/PKGBUILD"
 
 # make helper
 sudo -u "${AUR_USER}" -D~ bash -c "makepkg -s --noprogressbar --noconfirm --needed"
