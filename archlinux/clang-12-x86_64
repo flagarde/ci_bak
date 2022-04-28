@@ -8,5 +8,5 @@ ENV CC=clang
 ENV CXX=clang++
 ADD ./archlinux/scripts/add-aur.sh /root
 RUN bash /root/add-aur.sh "build"
-RUN trizen -S --needed --noconfirm llvm12
+RUN trizen -S --needed --noconfirm git llvm12;trizen --noconfirm -Rscn git; trizen --noconfirm -Scc
 
