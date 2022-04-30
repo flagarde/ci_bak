@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Install ROOT
-        run: pacman --noconfirm --noprogressbar root
+        run: pacman -S --noconfirm root
         
       - name: Setup CMake
         uses: jwlawson/actions-setup-cmake@v1.12
