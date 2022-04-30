@@ -1,0 +1,45 @@
+name: Test root
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  test-image:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false    
+
+    container: ghcr.io/ci_bak-archlinux-gcc-default-x86_64:main
+
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Install ROOT
+        run: pacman --noconfirm --noprogressbar root
+        
+      - name: Setup CMake
+        uses: jwlawson/actions-setup-cmake@v1.12
+        with:
+          cmake-version: 3.23.x
+          github-api-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
+        
+      - name: '🔧 Configure'
+        run: cmake -G Ninja -S ./tests -B ./build -D CMAKE_BUILD_TYPE=Release
+
+      - name: '⚙️ Build'
+        run: cmake --build ./build --config Release --parallel 2
+        
+      - name: 'List packages'
+        run: sudo pacman -S --noconfirm expac;  expac -H M '%m\t%n' | sort -h > archlinux-${{ matrix.image }}.txt
+        
+      - uses: actions/upload-artifact@v3
+        with:
+          name: archlinux-${{ matrix.image }}
+          path: ./archlinux-${{ matrix.image }}.txt
