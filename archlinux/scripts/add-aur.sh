@@ -21,7 +21,7 @@ pacman --sync --needed --noconfirm --noprogressbar sudo fakeroot binutils make |
 
 # create the user
 AUR_USER_HOME="/var/${AUR_USER}"
-useradd "${AUR_USER}" --system --shell /usr/bin/nologin --create-home --home-dir "${AUR_USER_HOME}"
+useradd "${AUR_USER}" --system --shell /bin/bash --create-home --home-dir "${AUR_USER_HOME}"
 
 # lock out the AUR_USER's password
 passwd --lock "${AUR_USER}"
