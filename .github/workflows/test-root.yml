@@ -31,7 +31,7 @@ jobs:
         uses: seanmiddleditch/gha-setup-ninja@master
         
       - name: '🔧 Configure'
-        run: cmake -G Ninja -S ./tests -B ./build -D CMAKE_BUILD_TYPE=Release
+        run: cmake -G Ninja -S ./tests -B ./build -D CMAKE_BUILD_TYPE=Release -DBUILD_ROOT_INTERFACE=ON -DBUILD_LCIO_INTERFACE=ON
 
       - name: '⚙️ Build'
         run: cmake --build ./build --config Release --parallel 2
