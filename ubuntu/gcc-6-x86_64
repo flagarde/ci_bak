@@ -7,6 +7,6 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 
 COPY ./ubuntu/scripts/bootstrap.sh .
-RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends g++-6
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends g++-6 gcc-6
 ENV CC=gcc-6
 ENV CXX=g++-6
