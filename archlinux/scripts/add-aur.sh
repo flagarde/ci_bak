@@ -17,6 +17,9 @@ AUR_USER="${1:-ab}"
 # we're gonna need sudo to use the helper properly
 pacman-key --init; 
 pacman -Sy
+pacman -Sy --noconfirm --noprogressbar archlinux-keyring
+pacman-key --populate archlinux
+pacman-key --refresh-keys
 pacman --sync --needed --noconfirm --noprogressbar sudo fakeroot binutils make || echo "Nothing to do"
 
 # create the user
