@@ -8,10 +8,17 @@ echo "deb http://archive.ubuntu.com/ubuntu/ bionic restricted" | tee -a /etc/apt
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 
 # Install required packages
 apt-get update
