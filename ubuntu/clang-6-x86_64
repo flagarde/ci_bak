@@ -7,6 +7,6 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 
 COPY ./ubuntu/scripts/bootstrap.sh .
-RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends clang-6.0 libisl19
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends clang-6.0
 ENV CC=clang-6.0
 ENV CXX=clang++-6.0
