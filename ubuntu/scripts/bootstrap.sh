@@ -10,6 +10,10 @@ echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates main" | tee /etc/apt/
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-security main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-security universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-security restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-security multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
