@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Install ROOT
+      - name: Install Geant4
         run: cat /etc/passwd; runuser -l  build -c 'trizen -S --noconfirm git geant4'
         
       - name: Setup CMake
