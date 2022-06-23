@@ -7,7 +7,7 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 
 COPY ./ubuntu/scripts/bootstrap.sh .
-RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends  intel-basekit
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends  intel-basekit linux-headers
 RUN source /opt/intel/oneapi/setvars.sh
 ENV CC: icx
 ENV CXX: icpx
