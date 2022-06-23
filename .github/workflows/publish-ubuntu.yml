@@ -46,7 +46,7 @@ jobs:
           - clang-11-x86_64
           - clang-12-x86_64
           - clang-14-x86_64
-          - intel-2022.2-x86_64
+          #- intel-2022.2-x86_64
 
     steps:
       - name: Checkout repository
