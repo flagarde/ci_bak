@@ -10,12 +10,12 @@ RUN apt-get update; apt-get install -y --no-install-recommends wget libc6-dev bi
 # get latest GCC #
 ##################
 
-RUN wget http://kayari.org/gcc-latest/gcc-latest.deb && \
-    dpkg -i gcc-latest.deb && \
-    rm -rf gcc-latest.deb && \
-    ln -s /opt/gcc-latest/bin/g++ /opt/gcc-latest/bin/g++-latest && \
-    ln -s /opt/gcc-latest/bin/gcc /opt/gcc-latest/bin/gcc-latest && \
-    curl https://github.com/root-project/root/archive/refs/tags/v6-14-00.tar.gz --output ./root.6.14.tar.gz && \
+#RUN wget http://kayari.org/gcc-latest/gcc-latest.deb && \
+#    dpkg -i gcc-latest.deb && \
+#    rm -rf gcc-latest.deb && \
+#    ln -s /opt/gcc-latest/bin/g++ /opt/gcc-latest/bin/g++-latest && \
+#    ln -s /opt/gcc-latest/bin/gcc /opt/gcc-latest/bin/gcc-latest && \
+RUN curl https://github.com/root-project/root/archive/refs/tags/v6-14-00.tar.gz --output ./root.6.14.tar.gz && \
     tar -xvf ./root.6.14.tar.gz && \
     cmake -S ./root.6.14 -B ./root.6.14-build -DCMAKE_INSTALL_PREFIX=./root-install && \
 
