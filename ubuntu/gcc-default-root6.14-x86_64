@@ -5,7 +5,8 @@ FROM ubuntu:jammy
 ####################
 
 ENV DEBIAN_FRONTEND=noninteractive
-
+RUN  echo "deb http://archive.ubuntu.com/ubuntu/ jammy main" | tee /etc/apt/sources.list.d/Ubuntu.list
+RUN  echo "deb http://archive.ubuntu.com/ubuntu/ jammy universe" | tee /etc/apt/sources.list.d/Ubuntu.list
 RUN apt-get install -y --no-install-recommends libc6-dev binutils curl unzip cmake openssl build-essential libssl-dev
 ##################
 # get latest GCC #
