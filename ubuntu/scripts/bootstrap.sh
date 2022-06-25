@@ -2,6 +2,12 @@
 
 # PPAs
 ## Ubuntu
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial universe" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial-updates universe" | tee /etc/apt/sources.list.d/Ubuntu.list
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.list.d/Ubuntu.list
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
