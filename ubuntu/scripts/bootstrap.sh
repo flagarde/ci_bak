@@ -7,7 +7,7 @@ echo "deb http://archive.ubuntu.com/ubuntu/ bionic main" | tee /etc/apt/sources.
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates main" | tee /etc/apt/sources.list.d/Ubuntu.list
-echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
+#echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates restricted" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates multiverse" | tee -a /etc/apt/sources.list.d/Ubuntu.list
 #echo "deb http://archive.ubuntu.com/ubuntu/ bionic-security main" | tee /etc/apt/sources.list.d/Ubuntu.list
