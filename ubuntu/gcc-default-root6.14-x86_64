@@ -7,7 +7,7 @@ FROM ubuntu:jammy
 ENV DEBIAN_FRONTEND=noninteractive
 
 COPY ./ubuntu/scripts/bootstrap.sh .
-RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends libc6-dev binutils curl unzip cmake openssl
+RUN chmod +x bootstrap.sh; ./bootstrap.sh; apt-get install -y --no-install-recommends libc6-dev binutils curl unzip cmake openssl build-essential libssl-dev
 ##################
 # get latest GCC #
 ##################
