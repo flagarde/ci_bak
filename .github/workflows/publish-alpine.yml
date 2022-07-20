@@ -47,7 +47,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ github.repository }}-alpine-${{ matrix.version }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v3.0.0
+        uses: docker/build-push-action@v3.1.0
         with:
           context: .
           push: false
